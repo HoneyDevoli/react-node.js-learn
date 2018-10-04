@@ -1,10 +1,19 @@
 import React from 'react'
-import {render} from 'react-dom'
-import App from './components/App'
-import {BrowserRouter} from 'react-router-dom'
+import { render } from 'react-dom'
+import App from './containers/App'
+
+import data from './data-mock/data';
 
 render((
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
+    <App housings={data} />
 ), document.getElementById('root'));
+
+
+// Housing
+// HousingList
+// HousingForm
+// Audience
+// AudienceList
+// AudienceSummary
+// HousingSummary
+// ConfirmModal
