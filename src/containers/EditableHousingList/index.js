@@ -31,14 +31,22 @@ class EditableHousingList extends React.Component {
         const index = updatedHousings.indexOf(prevHousing);
         updatedHousings[index] = housing;
 
-        console.log(updatedHousings);
-
         this.setState({
             housings: updatedHousings,
         });
 
         this.handleDefaultFormRender();
     };
+
+    handleHousingDelete = (housingNumber) => {
+        let updatedHousings = this.state.housings.slice();
+
+        updatedHousings = updatedHousings.filter((housing) => { return housing.number !== housingNumber; });
+
+        this.setState({
+            housings: updatedHousings
+        });
+    }
 
     handleEditFormRender = (housing) => {
         this.setState({
@@ -67,6 +75,7 @@ class EditableHousingList extends React.Component {
             <div>
                 <HousingList
                     housings={this.state.housings}
+                    handleHousingDelete={this.handleHousingDelete}
                     handleEditFormRender={this.handleEditFormRender}
                 />
                 <HousingForm

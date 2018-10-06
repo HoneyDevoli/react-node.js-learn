@@ -3,14 +3,19 @@ import React from 'react'
 import Housing from '../Housing'
 
 function HousingList(props) {
-    const { housings, handleEditFormRender } = props;
+    const {
+        housings,
+        handleHousingDelete,
+        handleEditFormRender
+    } = props;
 
     const housingElems = housings.map((housing) => {
         return (
             <li key={housing.number}>
                 <Housing
-                    handleEditFormRender={handleEditFormRender}
                     housing={housing}
+                    handleEditFormRender={handleEditFormRender}
+                    handleHousingDelete={handleHousingDelete}
                 />
             </li>
         );
