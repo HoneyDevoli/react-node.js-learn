@@ -1,12 +1,32 @@
-import React from 'react'
+import React from 'react';
+
+import AudienceList from '../AudienceList';
 
 class HousingDetailed extends React.Component {
     render() {
-        const { housing } = this.props.housing.location.state;
+        const { match } = this.props; // for api
+        const selectedHousing = {
+            "number": 1,
+            "audiences": [
+                {
+                    "number": 423,
+                    "capacity": 55,
+                    "type": "computer",
+                    "floor": 2,
+                },
+                {
+                    "number": 425,
+                    "capacity": 56,
+                    "type": "computer",
+                    "floor": 3,
+                },
+            ]
+        };
 
         return (
             <div>
-                <p>Housing number: {housing.number}</p>
+                <h2>Housing number {selectedHousing.number}</h2>
+                <AudienceList audiences={selectedHousing.audiences} />
             </div>
         );
     }

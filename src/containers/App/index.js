@@ -21,7 +21,7 @@ class App extends React.Component {
                     <Route
                         exact
                         path='/housings/:housingId'
-                        render={(housing) => <HousingDetailed housing={housing}/>}
+                        component={HousingDetailed}
                     />
                 </Switch>
             </div>

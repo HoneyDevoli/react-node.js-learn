@@ -2,6 +2,8 @@ import React from 'react'
 
 class Audience extends React.Component {
     render() {
+        const { audience } = this.props;
+
         return (
             <div>
                 <p>Number: {audience.number}</p>
