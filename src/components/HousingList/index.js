@@ -3,11 +3,15 @@ import React from 'react'
 import Housing from '../Housing'
 
 function HousingList(props) {
-    const { housings } = props;
+    const { housings, handleEditFormRender } = props;
+
     const housingElems = housings.map((housing) => {
         return (
             <li key={housing.number}>
-                <Housing housing={housing} />
+                <Housing
+                    handleEditFormRender={handleEditFormRender}
+                    housing={housing}
+                />
             </li>
         );
     })
