@@ -27,6 +27,8 @@ class HousingForm extends React.Component {
                             name="number"
                             value={this.state.number}
                             onChange={(e) => this.handleNumberChange(e)}
+                            required={true}
+                            pattern='\d+'
                         />
                     </label>
                     <button>{formMetaData.action}</button>
