@@ -53,7 +53,8 @@ class HousingForm extends React.Component {
         const { formMetaData } = this.props;
         const { onHousingCreate, onHousingUpdate } = this.props;
         const housing = {
-            number: +this.state.number
+            number: +this.state.number,
+            audiences: []
         };
 
 

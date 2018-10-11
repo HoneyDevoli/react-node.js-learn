@@ -10,4 +10,5 @@ render((
     <BrowserRouter>
         <App housings={data} />
     </BrowserRouter>
+
 ), document.getElementById('root'));

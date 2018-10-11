@@ -11,31 +11,72 @@ class EditableHousingList extends React.Component {
             isUpdate: false
         },
         currentHousing: {},
-        housings: this.props.housings
+        housings: []
     };
+
+    componentDidMount() {
+        fetch('/housings')
+            .then(res => res.json())
+            .then(housings => this.setState({ housings }));
+
+    }
 
     handleHousingCreate = (housing) => {
         const updatedHousings = this.state.housings.slice();
 
-        updatedHousings.push(housing);
+        let isRepeat = false;
+        for (let i = 0; i < updatedHousings.length; i++) {
+            if (updatedHousings[i].number === +housing.number) {
+                isRepeat = true;
+            }
+        }
 
-        this.setState({
-            housings: updatedHousings
-        });
+        if (!isRepeat) {
+            updatedHousings.push(housing);
+            fetch('/housings/create', {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(housing)
+            });
+            // .then(response => console.log(response));
+
+            this.setState({
+                housings: updatedHousings
+            });
+        } else {
+            window.alert('entering repeaiting housing number')
+        }
     };
 
     handleHousingUpdate = (housing) => {
         const updatedHousings = this.state.housings.slice();
         const prevHousing = this.state.currentHousing;
 
-        const index = updatedHousings.indexOf(prevHousing);
-        updatedHousings[index] = housing;
+        let isRepeat = false;
+        for(let i = 0; i<updatedHousings.length; i++){
+            if(updatedHousings[i].number === +housing.number){
+                isRepeat = true;
+            }
+        }
 
-        this.setState({
-            housings: updatedHousings,
-        });
+        if(isRepeat){
+            window.alert('it is repeat');
+        } else {
+            const index = updatedHousings.indexOf(prevHousing);
+            updatedHousings[index] = housing;
 
-        this.handleDefaultFormRender();
+            this.setState({
+                housings: updatedHousings,
+            });
+
+            fetch('/housings/update/' + prevHousing.number, {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(housing)
+            });
+
+            this.handleDefaultFormRender();
+        }
     };
 
     handleHousingDelete = (housingNumber) => {
@@ -45,6 +86,11 @@ class EditableHousingList extends React.Component {
 
         this.setState({
             housings: updatedHousings
+        });
+
+        fetch('housings/delete/' + housingNumber, {
+            headers: {"Content-Type": "application/json"},
+            method: "delete"
         });
     }
 
@@ -57,6 +103,7 @@ class EditableHousingList extends React.Component {
             },
             currentHousing: housing,
         });
+
     };
 
     handleDefaultFormRender = () => {
@@ -71,6 +118,7 @@ class EditableHousingList extends React.Component {
     }
 
     render() {
+        console.log(this.state.housings);
         return (
             <div>
                 <HousingList

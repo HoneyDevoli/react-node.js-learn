@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom';
+import './index.css'
 class Housing extends React.Component {
     handleEdit = (housing) => {
         const { handleEditFormRender } = this.props;
@@ -10,8 +11,7 @@ class Housing extends React.Component {
     handleDelete = (housingNumber) => {
         const { handleHousingDelete } = this.props;
 
-        const heh = window.confirm('hotite udalit?');
-
+        const heh = window.confirm('do you want to delete?');
         if (heh) {
             handleHousingDelete(housingNumber);
         }
@@ -22,8 +22,8 @@ class Housing extends React.Component {
 
         return (
             <div>
-                <p>
-                    <Link to={{
+                <p className="link">
+                    <Link className="link" to={{
                         pathname: `/housings/${housing.number}`,
                         state: { housing: housing }
                     }}>Number: {housing.number}</Link>
