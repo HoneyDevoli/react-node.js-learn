@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Housing from '../Housing'
 
 function HousingList(props) {
@@ -22,7 +21,7 @@ function HousingList(props) {
     })
 
     return (
-        <ul>
+        <ul style={{'listStyleType': 'none', 'padding': '0'}} >
             {housingElems}
         </ul>
     )

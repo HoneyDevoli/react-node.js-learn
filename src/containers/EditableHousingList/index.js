@@ -38,7 +38,6 @@ class EditableHousingList extends React.Component {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(housing)
             });
-            // .then(response => console.log(response));
 
             this.setState({
                 housings: updatedHousings
@@ -118,7 +117,6 @@ class EditableHousingList extends React.Component {
     }
 
     render() {
-        console.log(this.state.housings);
         return (
             <div>
                 <HousingList

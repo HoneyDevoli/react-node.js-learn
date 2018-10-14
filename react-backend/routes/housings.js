@@ -1,5 +1,7 @@
+var config = require('../config');
 var express = require('express');
 var router = express.Router();
+var mongoClient = require('mongodb').MongoClient;
 
 let data = [
     {
@@ -43,86 +45,154 @@ let data = [
         ]
     }
 ]
+
+var uri = config.uri;
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.json(data);
+    mongoClient.connect(uri, function(err, client) {
+        client.db("web-makaka").collection("housings").find({}).toArray(function (err, housings) {
+            if(err) return res.sendStatus(400);
+
+            res.json(housings);
+            client.close();
+        });
+
+    });
 });
 
 router.post("/create", function (req, res) {
-    // const housing = new Housing(req.body);
-    console.log(req.body);
-    data.push(
-        {
-            'number': req.body.number,
-            'audiences': []
+    if(!req.body) return res.sendStatus(400);
+    const housing = {number: req.body.number, audiences: []};
+
+    mongoClient.connect(uri, function(err, client){
+        client.db("web-makaka").collection("housings").insertOne(housing, function(err, result){
+            if(err) return res.sendStatus(400);
+            res.json(result);
+
+            client.close();
         });
-    console.log(data);
-    res.sendStatus(201);
+    });
 });
 
 router.delete('/delete/:id', function (req, res) {
-    data = data.filter((housing) => {
-        return housing.number !== +req.params.id;
+
+    var number = +req.params.id;
+    mongoClient.connect(uri, function(err, client){
+        client.db("web-makaka").collection("housings").deleteOne({number: number}, function(err, result){
+
+            if(err) return res.status(400).send();
+
+            res.end();
+            client.close();
+        });
     });
-    res.sendStatus(201);
+
+
 });
 
 router.put('/update/:id', function (req, res) {
-    for (let i = 0; i < data.length; i++) {
-        if (data[i].number === +req.params.id) {
-            data[i] = req.body;
-        }
-    }
-    res.sendStatus(201);
+
+    const housing = req.body;
+    const number = +req.params.id;
+
+    mongoClient.connect(uri, function(err, client){
+        client.db("web-makaka").collection("housings").findOneAndUpdate({number: number},{$set: housing}, function(err, result){
+            if(err) return res.sendStatus(400);
+
+            res.json(result.value);
+            client.close();
+        });
+    });
 });
 
 router.get('/:housingId', function (req, res, next) {
-    data.forEach((housing) => {
-        if(housing.number === +req.params.housingId){
-            return res.json(housing.audiences);
-        }
+
+    const number = +req.params.housingId;
+
+    mongoClient.connect(uri, function(err, client) {
+        client.db("web-makaka").collection("housings").findOne({number: number }, function (err, housing) {
+            if(err) return res.sendStatus(400);
+
+            res.json(housing.audiences);
+            client.close();
+        });
     });
 });
 
 //audiences
 
 router.post(`/:housingId/audience/add`, function (req, res) {
-    // const housing = new Housing(req.body);
-    data.forEach((housing) => {
-       if(housing.number === +req.params.housingId){
-           housing.audiences.push(req.body);
-       }
+
+    const number = +req.params.housingId;
+
+    mongoClient.connect(uri, function(err, client) {
+
+            const db = client.db("web-makaka").collection("housings");
+
+            db.findOne({number: number }, function (err, housing) {
+                if(err) return res.sendStatus(400);
+                housing.audiences.push(req.body);
+                db.findOneAndUpdate({number: number},{$set: {audiences: housing.audiences}}, function(err2, result2){
+                    if(err2) return res.sendStatus(400);
+
+                    client.close();
+                    res.json(housing.audiences);
+                });
+            });
     });
-    console.log(req.body);
-    res.sendStatus(201);
 });
 
 router.put('/:housingId/audiences/:audienceId/edit', function (req, res) {
-    console.log(res.body);
-    data.forEach((housing) => {
-        if(+housing.number === +req.params.housingId){
+
+    const number = +req.params.housingId;
+
+    mongoClient.connect(uri, function(err, client) {
+
+        const db = client.db("web-makaka").collection("housings");
+
+        db.findOne({number: number }, function (err, housing) {
+            if(err) return res.sendStatus(400);
+
             for(let i = 0; i<housing.audiences.length; i++){
-                if(+housing.audiences[i].number === +req.params.audienceId){
+                if(housing.audiences[i].number === req.params.audienceId){
                     housing.audiences[i] = req.body;
                 }
             }
-        }
+            db.findOneAndUpdate({number: number},{$set: {audiences: housing.audiences}}, function(err2, result2){
+                if(err2) return res.sendStatus(400);
+
+                client.close();
+                res.json(housing.audiences);
+            });
+        });
     });
-    return res.sendStatus(201);
 });
 
 router.delete('/:housingId/audiences/delete/:audienceId', function (req, res) {
-    data.forEach((housing) => {
-        if(housing.number === +req.params.housingId){
-            for(let i = 0; i<housing.audiences.length; i++){
-                if(+housing.audiences[i].number === +req.params.audienceId){
-                    housing.audiences.splice(i,1);
 
+    const number = +req.params.housingId;
+
+    mongoClient.connect(uri, function(err, client) {
+
+        const db = client.db("web-makaka").collection("housings");
+
+        db.findOne({number: number }, function (err, housing) {
+            if(err) return res.sendStatus(400);
+
+            for(let i = 0; i<housing.audiences.length; i++){
+                if(housing.audiences[i].number === req.params.audienceId){
+                    housing.audiences.splice(i,1);
                 }
             }
-        }
+            db.findOneAndUpdate({number: number},{$set: {audiences: housing.audiences}}, function(err2, result2){
+                if(err2) return res.sendStatus(400);
+
+                client.close();
+                res.json(housing.audiences);
+            });
+        });
     });
-    res.sendStatus(201);
 });
 
 

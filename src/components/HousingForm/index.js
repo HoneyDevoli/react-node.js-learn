@@ -13,25 +13,28 @@ class HousingForm extends React.Component {
         });
     };
 
+
     render() {
         const { formMetaData } = this.props;
 
         return (
             <div>
                 <h2>{formMetaData.title}</h2>
-                <form onSubmit={(e) => { this.handleSubmit(e) }}>
-                    <label>
-                        <span>Number:</span><br></br>
-                        <input
+                <form className="col-3 row" onSubmit={(e) => { this.handleSubmit(e) }}>
+                    <div className="form-group col-5">
+                        <label>
+                            Number:<br></br>
+                        </label>
+                        <input className="form-control"
                             type="text"
                             name="number"
                             value={this.state.number}
                             onChange={(e) => this.handleNumberChange(e)}
                             required={true}
-                            pattern='\d+'
+                            pattern='^[1-9]{1}[0-9]*'
                         />
-                    </label>
-                    <button>{formMetaData.action}</button>
+                    </div>
+                    <button className="btn btn-outline-success btn-sm ">{formMetaData.action}</button>
                 </form>
             </div>
         );
@@ -41,7 +44,6 @@ class HousingForm extends React.Component {
         e.preventDefault();
 
         const { target } = e;
-
         this.setState({
             number: target.value
         });

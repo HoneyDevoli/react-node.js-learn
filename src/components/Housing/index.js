@@ -1,6 +1,7 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './index.css'
+
 class Housing extends React.Component {
     handleEdit = (housing) => {
         const { handleEditFormRender } = this.props;
@@ -21,15 +22,17 @@ class Housing extends React.Component {
         const { housing } = this.props;
 
         return (
-            <div>
-                <p className="link">
+            <div className="row mb-2">
+                <div className="col-3">
                     <Link className="link" to={{
                         pathname: `/housings/${housing.number}`,
                         state: { housing: housing }
                     }}>Number: {housing.number}</Link>
-                </p>
-                <button onClick={() => this.handleEdit(housing)}>edit</button>
-                <button onClick={() => this.handleDelete(housing.number)}>delete</button>
+                </div>
+                <div className="col-9" >
+                    <button className="btn btn-sm btn-outline-warning mr-2" onClick={() => this.handleEdit(housing)}>edit</button>
+                    <button  className="btn btn-sm btn-outline-danger"onClick={() => this.handleDelete(housing.number)}>delete</button>
+                </div>
             </div >
         );
     };

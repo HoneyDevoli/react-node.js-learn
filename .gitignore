@@ -3,12 +3,15 @@
 # dependencies
 /node_modules
 /react-backend/node_modules
+/react-backend/config.js
+
 
 # testing
 /coverage
 
 # production
 /build
+/idea
 
 # misc
 .DS_Store

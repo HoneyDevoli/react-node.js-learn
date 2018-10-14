@@ -26,7 +26,7 @@ class Audience extends React.Component {
                             <td>{audience.type}</td>
                             <td>{audience.floor}</td>
                             <td>
-                                <Link to={{
+                                <Link className="link" to={{
                                     pathname: `/housings/${housingId}/audiences/${audience.number}/edit`,
                                     state: {
                                         audience: audience,

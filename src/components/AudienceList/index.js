@@ -3,24 +3,14 @@ import React from 'react'
 import Audience from '../Audience';
 
 class AudienceList extends React.Component {
-    state = {
-            audiences: []
-    }
-
-    componentDidMount() {
-        const {housingId} = this.props;
-        fetch(`/housings/${housingId}`)
-            .then(res => res.json())
-            .then(audiences => this.setState({ audiences }));
-
-    }
 
     render() {
         const {
             housingId,
-            handleEditAudience
+            handleEditAudience,
+            selectedAudiences
         } = this.props;
-        const audienceElems = this.state.audiences.map((audience) => {
+        const audienceElems = selectedAudiences.map((audience) => {
             return (
                 <li key={audience.number}>
                     <Audience
@@ -36,7 +26,7 @@ class AudienceList extends React.Component {
         return (
             <div>
                 <h3>Audiences: </h3>
-                <ul>
+                <ul style={{'listStyleType': 'none', 'padding': '0'}}>
                     {audienceElems}
                 </ul>
             </div>
@@ -44,24 +34,11 @@ class AudienceList extends React.Component {
     };
 
     handleDeleteAudience = (audienceNumber) => {
-        let updatedAudience = this.state.audiences;
-        const {housingId} = this.props;
+        console.log(audienceNumber);
+        this.props.handleDeleteAudience(audienceNumber);
 
-        updatedAudience = updatedAudience.filter((audience) => {
-            return audience.number !== audienceNumber;
-        });
-
-        this.setState({
-            audiences : updatedAudience
-        });
-
-        fetch(`/housings/${housingId}/audiences/delete/${audienceNumber}` , {
-            headers: {"Content-Type": "application/json"},
-            method: "delete"
-        });
     }
 }
-
 
 
 export default AudienceList;

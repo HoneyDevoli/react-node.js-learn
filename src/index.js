@@ -4,11 +4,10 @@ import App from './containers/App'
 
 import { BrowserRouter } from 'react-router-dom';
 
-import data from './data-mock/data';
 
 render((
     <BrowserRouter>
-        <App housings={data} />
+        <App/>
     </BrowserRouter>
 
 ), document.getElementById('root'));

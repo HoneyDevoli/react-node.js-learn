@@ -1,5 +1,4 @@
 import React from 'react'
-import BrowserHistory from 'react-router-dom'
 
 class AudienceForm extends React.Component {
     state = {
@@ -12,10 +11,11 @@ class AudienceForm extends React.Component {
 
     componentDidMount() {
         const {housingId} = this.props.match.params.housingId;
-        fetch(`/housings/${housingId}`)
-            .then(res => res.json())
-            .then(audiences => this.setState({ audiences }));
-
+        if(this.props.isEdit) {
+            fetch(`/housings/${housingId}`)
+                .then(res => res.json())
+                .then(audiences => this.setState({audiences}));
+        }
     }
 
     render() {
@@ -133,7 +133,6 @@ class AudienceForm extends React.Component {
         for (let i = 0; i < this.state.audiences.length; i++) {
             if (+this.state.audiences[i].number === +this.state.number) {
                 isRepeat = true;
-                console.log(this.state.audiences[i]);
             }
         }
 
@@ -159,7 +158,7 @@ class AudienceForm extends React.Component {
             }
             this.props.history.goBack();
         } else {
-        window.alert("repetition")}
+        window.alert("repeation")}
     }
 }
 
