@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f752ad4c-fc06-4aa2-bb2f-cddce1340f56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-backend/entities/Audience.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-backend/entities/Housing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-backend/routes/housings.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-backend/routes/housings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Audience/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Audience/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AudienceForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AudienceForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AudienceList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AudienceList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Housing/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Housing/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Housing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Housing/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HousingDetailed/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HousingDetailed/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HousingDetailed/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HousingDetailed/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HousingForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HousingForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HousingList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HousingList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/EditableAudienceList/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/EditableHousingList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/EditableHousingList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-mock/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -96,7 +74,7 @@
           <entry key="css" value="8" />
           <entry key="gitignore" value="49" />
           <entry key="html" value="29" />
-          <entry key="js" value="11916" />
+          <entry key="js" value="12094" />
           <entry key="json" value="128" />
         </counts>
       </usages-collector>
@@ -105,7 +83,7 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="29" />
           <entry key="JSON" value="128" />
-          <entry key="JavaScript" value="11916" />
+          <entry key="JavaScript" value="12094" />
           <entry key="PLAIN_TEXT" value="49" />
         </counts>
       </usages-collector>
@@ -121,8 +99,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/react-backend/routes/housings.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="10">
-                  <caret line="145" column="48" lean-forward="true" selection-start-line="145" selection-start-column="48" selection-end-line="145" selection-end-column="48" />
+                <state relative-caret-position="368">
+                  <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
                   <folding>
                     <element signature="e#77#997#0" />
                   </folding>
@@ -145,7 +123,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/react-backend/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
+                <state relative-caret-position="161">
                   <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
                 </state>
               </provider>
@@ -154,8 +132,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/AudienceForm/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="83" column="28" lean-forward="true" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
+                <state relative-caret-position="253">
+                  <caret line="151" column="23" lean-forward="true" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -179,7 +157,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/HousingDetailed/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
+                <state relative-caret-position="-184">
                   <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -231,11 +209,11 @@
         <option value="$PROJECT_DIR$/react-backend/config.js" />
         <option value="$PROJECT_DIR$/src/components/AudienceList/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/components/AudienceForm/index.js" />
         <option value="$PROJECT_DIR$/src/containers/App/index.js" />
-        <option value="$PROJECT_DIR$/react-backend/routes/housings.js" />
         <option value="$PROJECT_DIR$/react-backend/app.js" />
         <option value="$PROJECT_DIR$/src/components/HousingDetailed/index.js" />
+        <option value="$PROJECT_DIR$/react-backend/routes/housings.js" />
+        <option value="$PROJECT_DIR$/src/components/AudienceForm/index.js" />
       </list>
     </option>
   </component>
@@ -255,7 +233,7 @@
       <path value="$PROJECT_DIR$/react-backend/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="476" />
     <option name="y" value="140" />
     <option name="width" value="1400" />
@@ -282,11 +260,6 @@
             <path>
               <item name="laba_1" type="b2602c69:ProjectViewProjectNode" />
               <item name="laba_1" type="462c0819:PsiDirectoryNode" />
-              <item name="react-backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laba_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laba_1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -294,6 +267,13 @@
               <item name="laba_1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laba_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laba_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AudienceForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laba_1" type="b2602c69:ProjectViewProjectNode" />
@@ -301,19 +281,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="HousingDetailed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laba_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laba_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laba_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laba_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,7 +362,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124786000" />
+    <option name="totallyTimeSpent" value="127656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +374,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49814814" visible="true" weight="0.13277134" />
@@ -646,23 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/react-backend/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-backend/routes/housings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="145" column="48" lean-forward="true" selection-start-line="145" selection-start-column="48" selection-end-line="145" selection-end-column="48" />
-          <folding>
-            <element signature="e#77#997#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/HousingList/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -683,20 +633,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AudienceForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="83" column="28" lean-forward="true" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/HousingDetailed/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="-184">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-backend/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-backend/routes/housings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
+          <folding>
+            <element signature="e#77#997#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AudienceForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="151" column="23" lean-forward="true" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
         </state>
       </provider>
     </entry>

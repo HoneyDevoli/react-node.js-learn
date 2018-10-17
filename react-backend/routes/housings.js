@@ -132,6 +132,7 @@ router.post(`/:housingId/audience/add`, function (req, res) {
 
             db.findOne({number: number }, function (err, housing) {
                 if(err) return res.sendStatus(400);
+                console.log(req.body);
                 housing.audiences.push(req.body);
                 db.findOneAndUpdate({number: number},{$set: {audiences: housing.audiences}}, function(err2, result2){
                     if(err2) return res.sendStatus(400);

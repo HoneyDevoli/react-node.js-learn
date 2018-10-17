@@ -145,7 +145,11 @@ class AudienceForm extends React.Component {
                 fetch(`/housings/${housingId}/audiences/${audienceId}/edit`, {
                     method: 'put',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(this.state)
+                    body: JSON.stringify({ number : this.state.number,
+                        capacity: this.state.capacity,
+                        floor: this.state.floor,
+                        type: this.state.type
+                    })
                 });
             } else {
                 //send to add
@@ -153,7 +157,12 @@ class AudienceForm extends React.Component {
                 fetch(`/housings/${housingId}/audience/add`, {
                     method: 'post',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(this.state)
+                    body: JSON.stringify({
+                        number : this.state.number,
+                        capacity: this.state.capacity,
+                        floor: this.state.floor,
+                        type: this.state.type
+                    })
                 });
             }
             this.props.history.goBack();
